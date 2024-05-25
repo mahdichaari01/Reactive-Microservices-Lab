@@ -26,13 +26,13 @@ Getting Started
 
 To set up and run the demo, follow these steps:
 
-1.  shCopier le codedocker-compose up
+1.  Copier le codedocker-compose up
     
-2.  shCopier le codemake start
+2.  Copier le codemake start
     
-3.  shCopier le codemake watch-kafka
+3.  Copier le codemake watch-kafka
     
-4.  shCopier le codemake trigger
+4.  Copier le codemake trigger
     
 
 Makefile Targets
