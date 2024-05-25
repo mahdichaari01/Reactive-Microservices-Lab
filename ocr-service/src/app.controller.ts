@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { ClientProxy, EventPattern } from '@nestjs/microservices';
+import { OcrDocument } from './types/ocr.types';
+import { OcrService } from './ocr.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(@Inject('OCR_SERVICE') private readonly client: ClientProxy, private readonly ocrService: OcrService) { }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @EventPattern('ocr')
+  async handleOCR(data: OcrDocument) {
+    console.log('Received data:', data);
+    const result = await this.ocrService.processImage(data.id);
+    this.client.emit("ocr-ready", JSON.stringify(
+      {
+        id: data.id,
+        data: result
+      }
+    ));
   }
 }

@@ -5,6 +5,10 @@ Project Demo
 
 This project demonstrates how to run and interact with a Kafka-based messaging system using Docker Compose and Make.
 
+![Demo GIF](./demo.gif)
+
+
+
 Prerequisites
 -------------
 
@@ -33,12 +37,13 @@ To set up and run the demo, follow these steps:
 
 Makefile Targets
 ----------------
+*   **make init** : to start infra and install dependencies
 
-*   **make start**: Starts the application.
+*   **make start-app-1** : to start the risk-management-service
+
+*   **make start-app-2** : to start the ocr service
     
-*   **make watch-kafka**: Watches for incoming Kafka messages.
-    
-*   **make trigger**: Triggers a new Kafka message.
+*   **make trigger**: Triggers a new Kafka message and watch the demo
     
 
 Additional Information

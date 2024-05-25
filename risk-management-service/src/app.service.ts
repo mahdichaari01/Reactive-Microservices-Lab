@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  async complexCalculation(){
+    return new Promise(r=>{setTimeout(()=>r(400),10)})
   }
 }
