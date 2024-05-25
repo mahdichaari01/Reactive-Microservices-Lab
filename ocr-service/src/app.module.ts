@@ -3,8 +3,8 @@ import { AppController } from './app.controller';
 import { OcrService } from './ocr.service';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { createScheduler, createWorker } from 'tesseract.js';
+import { TESSERRACT_WORKER } from './constant';
 
-export const TESSERRACT_WORKER = 'TESSERRACT_WORKER';
 
 @Module({
   imports: [
