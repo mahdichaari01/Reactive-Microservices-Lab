@@ -24,19 +24,6 @@ Before running the demo, ensure you have the following installed on your system:
 Getting Started
 ---------------
 
-To set up and run the demo, follow these steps:
-
-1.  Copier le codedocker-compose up
-    
-2.  Copier le codemake start
-    
-3.  Copier le codemake watch-kafka
-    
-4.  Copier le codemake trigger
-    
-
-Makefile Targets
-----------------
 *   **make init** : to start infra and install dependencies
 
 *   **make start-app-1** : to start the risk-management-service
